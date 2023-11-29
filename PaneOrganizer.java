@@ -1,6 +1,7 @@
 package indy;
 
 import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
@@ -19,7 +20,7 @@ public class PaneOrganizer {
         this.setupCenterPane();
         this.setupSidePane();
         this.setupBottomPane();
-        new Sandbox(this.centerPane);
+        new Sandbox(this.centerPane, this.sidePane);
     }
 
     private void setupCenterPane() {
@@ -48,7 +49,17 @@ public class PaneOrganizer {
                                               BorderStrokeStyle.SOLID,
                                               null,
                                               new BorderWidths(Constants.BORDER_WIDTH))));
+        this.bottomPane.setAlignment(Pos.CENTER_LEFT);
+        this.bottomPane.setSpacing(30);
+        this.bottomPane.setPadding(new Insets(0, 0, 0, 10));
 
+        Button waterButton = new Button("WATR");
+        waterButton.setPrefSize(Constants.BUTTON_WIDTH, Constants.BUTTON_HEIGHT);
+        waterButton.setFont(new Font("Comic Sans MS", 20));
+        waterButton.setStyle("-fx-background-color: #6495ED");
+        waterButton.setTextFill(Color.BLACK);
+
+        this.bottomPane.getChildren().addAll(waterButton);
         this.root.setBottom(this.bottomPane);
         this.bottomPane.setFocusTraversable(false);
     }
@@ -63,13 +74,15 @@ public class PaneOrganizer {
                                             BorderStrokeStyle.SOLID,
                                             null,
                                             new BorderWidths(Constants.BORDER_WIDTH))));
-        this.sidePane.setAlignment(Pos.BOTTOM_CENTER);
+        this.sidePane.setAlignment(Pos.TOP_CENTER);
         this.sidePane.setSpacing(30);
+        this.sidePane.setPadding(new Insets(10, 0, 0, 0));
 
         Button quitButton = new Button("QUIT");
-        quitButton.setPrefSize(Constants.QUIT_BUTTON_WIDTH, Constants.QUIT_BUTTON_HEIGHT);
+        quitButton.setPrefSize(Constants.BUTTON_WIDTH, Constants.BUTTON_HEIGHT);
         quitButton.setFont(new Font("Comic Sans MS", 20));
         quitButton.setStyle("-fx-background-color: #F00000");
+        quitButton.setTextFill(Color.BLACK);
         quitButton.setOnAction((ActionEvent e) -> System.exit(0));
 
         this.sidePane.getChildren().add(quitButton);
