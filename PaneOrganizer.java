@@ -14,13 +14,15 @@ public class PaneOrganizer {
     private Pane centerPane;
     private HBox bottomPane;
     private VBox sidePane;
+    private State state;
 
     public PaneOrganizer() {
         this.root = new BorderPane();
+        this.state = State.SOLID;
         this.setupCenterPane();
         this.setupSidePane();
         this.setupBottomPane();
-        new Sandbox(this.centerPane, this.sidePane);
+        new Sandbox(this.centerPane, this.sidePane, this.bottomPane, this.state);
     }
 
     private void setupCenterPane() {
@@ -50,16 +52,9 @@ public class PaneOrganizer {
                                               null,
                                               new BorderWidths(Constants.BORDER_WIDTH))));
         this.bottomPane.setAlignment(Pos.CENTER_LEFT);
-        this.bottomPane.setSpacing(30);
+        this.bottomPane.setSpacing(10);
         this.bottomPane.setPadding(new Insets(0, 0, 0, 10));
 
-        Button waterButton = new Button("WATR");
-        waterButton.setPrefSize(Constants.BUTTON_WIDTH, Constants.BUTTON_HEIGHT);
-        waterButton.setFont(new Font("Comic Sans MS", 20));
-        waterButton.setStyle("-fx-background-color: #6495ED");
-        waterButton.setTextFill(Color.BLACK);
-
-        this.bottomPane.getChildren().addAll(waterButton);
         this.root.setBottom(this.bottomPane);
         this.bottomPane.setFocusTraversable(false);
     }
