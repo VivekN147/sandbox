@@ -18,7 +18,7 @@ public class PaneOrganizer {
 
     public PaneOrganizer() {
         this.root = new BorderPane();
-        this.state = State.SOLID;
+        this.state = State.ICE;
         this.setupCenterPane();
         this.setupSidePane();
         this.setupBottomPane();

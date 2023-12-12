@@ -1,5 +1,5 @@
 package indy;
 
 public enum State {
-    GAS, LIQUID, POWDER, SOLID;
+    WTRV, WATR, SNOW, ICE, OXYG, HYGN, LAVA, STNE
 }

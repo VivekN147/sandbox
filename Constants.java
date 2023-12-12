@@ -14,7 +14,8 @@ public class Constants {
     public static final int BUTTON_HEIGHT = 50;
     public static final int BORDER_WIDTH = 2;
     public static int GRAVITY = 300;
-    public static final double DURATION = 0.01; //0.005;
+    public static final double DURATION = 0.01;
     public static final int BOTTOM_CHECK = 795;
     public static final int ERROR_CORRECTION = 5;
+    public static final int SMOOTHING_RADIUS = 10;
 }
