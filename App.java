@@ -5,14 +5,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * It's time for Indy! This is the main class to get things started.
- *
- * Class comments here...
- *
+ * This class starts the program setting up the GUI and running the launch method.
  */
 
 public class App extends Application {
 
+    /**
+     * This method creates the PaneOrganizer and assigns it to a new scene along with some
+     * dimensions. It then sets the scene and title of the stage and shows the stage.
+     */
     @Override
     public void start(Stage stage) {
         PaneOrganizer organizer = new PaneOrganizer();
@@ -25,6 +26,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-;        launch(args); // launch is a method inherited from Application
+        launch(args); // launch is a method inherited from Application
     }
 }
