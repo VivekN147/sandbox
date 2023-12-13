@@ -26,7 +26,7 @@ public class Constants {
     public static final int LIGHT_GAS_DISPERSION = 2;
     public static final int TOP_CHECK = 5;
     public static final int LIGHT_GAS_SPEED = -50;
-    public static final int GAS_BOUNDARY = 1;
+    public static final int GAS_BOUNDARY = 2;
     public static final int DISPERSION_POSSIBILITIES = 5;
     public static final int LAVA_GRAVITY = 700;
     public static final double KERNEL_SCALAR = -45 / Math.PI;
